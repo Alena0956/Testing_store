@@ -1,5 +1,6 @@
 from .main_page import MainPage
 from .locators import ProductPageLocators
+from .locators import MainPageLocators
 
 class ProductPage(MainPage):
 	def add_to_basket_button(self):
@@ -32,6 +33,23 @@ class ProductPage(MainPage):
 		print(price, '= it is simple price')
 		print(alert_price, '= it is price in alert')
 		assert alert_price == price, 'The price in the basket does not match'
+
+	def cross_to_main_page(self):
+		click_logo = self.browser.find_element(*MainPageLocators. LOGO)
+		click_logo.click()
+		url_page = self.browser.current_url
+		print(url_page)
+		assert url_page == 'http://automationpractice.com/index.php', \
+		'You did not go to the main page, the URL does not match'
+
+
+
+
+
+
+
+
+
 
 
 		

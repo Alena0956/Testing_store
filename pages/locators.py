@@ -6,6 +6,7 @@ class MainPageLocators():
 	USER_ICON = (By.CSS_SELECTOR, '[title="View my customer account"]')
 	LOGIN_LINK = (By.CSS_SELECTOR, '.login')
 	CONTACT_US = (By.CSS_SELECTOR, '#contact-link')
+	LOGO = (By.CSS_SELECTOR, '#header_logo')
 
 class LoginPageLocators():
 	LOGIN_FORM = (By.CSS_SELECTOR, '#login_form')

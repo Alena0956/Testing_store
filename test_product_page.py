@@ -61,6 +61,12 @@ def test_guest_should_see_login_link_on_product_page(browser):
     page.open()
     page.should_be_login_link()
 
+@pytest.mark.actions_of_guest_1
+def test_guest_can_go_to_main_page_from_product_page(browser):
+    link = "http://automationpractice.com/index.php?id_product=2&controller=product"
+    page = ProductPage(browser, link)
+    page.open()
+    page.cross_to_main_page()
 
 
 
