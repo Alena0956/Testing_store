@@ -12,7 +12,7 @@ def browser(request):
 #	options = Options()
 #	options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
 	browser = webdriver.Chrome()#options=options)
-	browser.set_window_size(1400,1050)
+	browser.set_window_size(1405,1050)
 	print("\nstart browser for test..")
 	yield browser
 	print("\nquit browser..")

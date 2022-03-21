@@ -22,7 +22,7 @@ class TestLoginFromMainPage():
 		page.open()
 		page.should_be_login_link()
 
-	@pytest.mark.new
+	#@pytest.mark.new
 	def test_guest_cant_see_product_in_basket_opened_from_main_page(self,browser):
 		link = "http://automationpractice.com/index.php"
 		page = BasketPage(browser,link)
@@ -30,5 +30,27 @@ class TestLoginFromMainPage():
 		page.go_to_basket()
 		page.basket_should_be_empty()
 		page.should_be_message_about_emty_basket()
+
+	@pytest.mark.new
+	def test_guest_can_send_message_from_contact_us(self, browser):
+		link = "http://automationpractice.com/index.php"
+		page = MainPage(browser, link)
+		page.open()
+		page.go_to_contact_us()
+		page.sending_message()
+		page.should_be_success_message()
+		time.sleep(7)
+
+
+
+
+
+
+
+
+
+
+
+
 		
 

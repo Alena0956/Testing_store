@@ -6,8 +6,16 @@ class ProductPage(MainPage):
 		basket = self.browser.find_element(*ProductPageLocators. BUTTON_ADD_TO_BASKET)
 		basket.click()
 
+	def add_to_wishlist(self):
+		wishlist = self.browser.find_element(*ProductPageLocators. BUTTON_ADD_TO_WISHLIST)
+		wishlist.click()
+
+	def check_success_message_wishlist(self):
+		assert self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGE_WISHLIST), \
+		'Success message is not presented, but should be'
+
 	def check_success_message(self):
-		assert self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+		assert self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGE_BASKET), \
 		'Success message is not presented, but should be'
 
 	def check_product_name(self):
@@ -24,3 +32,6 @@ class ProductPage(MainPage):
 		print(price, '= it is simple price')
 		print(alert_price, '= it is price in alert')
 		assert alert_price == price, 'The price in the basket does not match'
+
+
+		

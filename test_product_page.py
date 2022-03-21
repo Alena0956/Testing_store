@@ -16,7 +16,6 @@ class TestUserCanAddToBasketFromProductPage():
 		page.register_new_user(email, password)
 		page.should_be_authorized_user()
 
-	@pytest.mark.need_review
 	def test_user_can_add_product_to_basket(self, browser):
 		link = 'http://automationpractice.com/index.php?id_product=1&controller=product'
 		page = ProductPage(browser, link)
@@ -27,7 +26,15 @@ class TestUserCanAddToBasketFromProductPage():
 		page.check_product_name()
 		page.check_product_price()
 
-@pytest.mark.need_review
+	def test_user_can_add_product_to_wishlist(self, browser):
+		link = 'http://automationpractice.com/index.php?id_product=1&controller=product'
+		page = ProductPage(browser, link)
+		page.open()
+		page.add_to_wishlist()
+		time.sleep(7)
+		page.check_success_message_wishlist()
+
+@pytest.mark.actions_of_guest
 def test_guest_can_add_product_to_basket(browser):
 		link = 'http://automationpractice.com/index.php?id_product=1&controller=product'
 		page = ProductPage(browser, link)
@@ -38,7 +45,7 @@ def test_guest_can_add_product_to_basket(browser):
 		page.check_product_name()
 		page.check_product_price()
 
-@pytest.mark.need_review_2
+@pytest.mark.actions_of_guest
 def test_guest_can_go_to_login_page_from_product_page(browser):
  	link = "http://automationpractice.com/index.php?id_product=2&controller=product"
  	page = LoginPage(browser, link)
@@ -47,6 +54,7 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
  	time.sleep(5)
  	page.should_be_login_page()
 
+@pytest.mark.actions_of_guest
 def test_guest_should_see_login_link_on_product_page(browser):
     link = "http://automationpractice.com/index.php?id_product=2&controller=product"
     page = ProductPage(browser, link)

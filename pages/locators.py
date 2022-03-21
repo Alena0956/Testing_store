@@ -5,6 +5,7 @@ class MainPageLocators():
 	VIEW_BASKET = (By.CSS_SELECTOR, '[title="View my shopping cart"]')
 	USER_ICON = (By.CSS_SELECTOR, '[title="View my customer account"]')
 	LOGIN_LINK = (By.CSS_SELECTOR, '.login')
+	CONTACT_US = (By.CSS_SELECTOR, '#contact-link')
 
 class LoginPageLocators():
 	LOGIN_FORM = (By.CSS_SELECTOR, '#login_form')
@@ -30,9 +31,22 @@ class ProductPageLocators():
 	BUTTON_ADD_TO_BASKET = (By.CSS_SELECTOR,'#add_to_cart')
 	ALERT_NAME = (By.CSS_SELECTOR,'.clearfix .layer_cart_product_info .product-name')
 	PRODUCT_NAME = (By.CSS_SELECTOR,'.pb-center-column h1')
-	SUCCESS_MESSAGE = (By.CSS_SELECTOR, '.layer_cart_product.col-xs-12.col-md-6 h2')
+	SUCCESS_MESSAGE_BASKET = (By.CSS_SELECTOR, '.layer_cart_product.col-xs-12.col-md-6 h2')
 	PRICE_PRODUCT = (By.CSS_SELECTOR, '#our_price_display')
 	ALERT_PRICE = (By.CSS_SELECTOR, '#layer_cart_product_price')
+	BUTTON_ADD_TO_WISHLIST = (By.CSS_SELECTOR, '#wishlist_button')
+	SUCCESS_MESSAGE_WISHLIST = (By.CSS_SELECTOR, '.fancybox-error')
+
+class ContactUsPageLocators():
+	SUBJECT = (By.CSS_SELECTOR, '#id_contact')
+	MESSAGE = (By.CSS_SELECTOR, '#message')
+	BUTTON_SEND = (By.CSS_SELECTOR, '#submitMessage')
+	ALERT_SUCCESS = (By.CSS_SELECTOR, '.alert.alert-success')
+	EMAIL = (By.CSS_SELECTOR, '#email')
+
+
+
+
 
 
 
